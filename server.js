@@ -2,7 +2,10 @@ const express = require('express')
 const app = express()
 const bodyParser = require("body-parser")
 
+app.use(bodyParser.json({ extended: true }));
+
 app.use(express.static('public'))
+
 
 // set 'html' as the engine, using ejs's renderFile function
 var ejs = require('ejs');
