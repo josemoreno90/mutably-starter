@@ -1,4 +1,6 @@
 console.log("Sanity Check: JS is working!");
+let $resource = $("#resource");
+console.log($("#resource"))
 
 $(document).ready(function(){
 
@@ -15,7 +17,7 @@ $(document).ready(function(){
                 "<p><strong>Pokedex:</strong>" + pokemon.pokedex + "<p>Cover:</p>\
                 <img style='width:60px;height:60px;' src='" + pokemon.image + "'>" +
                 "<button class='btn btn-sucess'>Edit</button>\
-                <button class='btn btn-danger' id='delete'>Delete</button>\
+                <button class='delete btn btn-danger'>Delete</button>\
               </div>")
       })
     })
@@ -32,12 +34,17 @@ $(document).ready(function(){
             "<p><strong>Pokedex:</strong>" + result.pokedex + "<p>Cover:</p>\
             <img style='width:60px;height:60px;' src='" + result.image + "'>" +
             "<button class='btn btn-sucess'>Edit</button>\
-            <button class='btn btn-danger' id='delete'>Delete</button>\
+            <button class='delete btn btn-danger'>Delete</button>\
           </div>");
         $('#myModal').modal('toggle')
       })
   })
 
-  $()
+let resource = $("resource");
+
+  $("#resource").on("click", ".delete", function(evt){
+    evt.preventDefault
+    $(this).parent().remove();
+  })
 
 });
